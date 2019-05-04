@@ -2,6 +2,12 @@ using Printf
 using Statistics
 
 #this is a comment
+#= this
+is a
+multiline 
+comment 
+=#
+#=
 var = "This is a string"
 var = 1 #variable types are dynamically assigned
 
@@ -73,3 +79,17 @@ end #you must have an end
 #the response if the conditional is true is "cheese" and "fries" if it is false
 
 @prinf("!true = %s\n", !true ? "true" : "false")
+=#
+
+i = 1
+while i < 20 #a while loop which has a conditional
+    if (i % 2) == 0 #if i is divisible by 2
+        println(i) 
+        global i += 1 #a global change in i, not local
+        continue #skip the rest of the code in the loop
+    end
+    global i += 1 #global change in i once again
+    if i >= 10
+        break #breaking out of loop if the counter reaches 10
+    end
+end
