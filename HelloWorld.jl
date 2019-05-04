@@ -79,7 +79,7 @@ end #you must have an end
 #the response if the conditional is true is "cheese" and "fries" if it is false
 
 @prinf("!true = %s\n", !true ? "true" : "false")
-=#
+
 
 i = 1
 while i < 20 #a while loop which has a conditional
@@ -93,3 +93,32 @@ while i < 20 #a while loop which has a conditional
         break #breaking out of loop if the counter reaches 10
     end
 end
+
+for i = 1:5 #a loop from range 1 to 5
+    println(i)
+end
+for i in [2,4,6] #a loop through an array of even numbers
+    println(i)
+end
+
+for i = 1:5, j = 2:2:10 #i loops though a range of1 to 5
+    println((i, j)) #j loops from 2 to 10 with steps of 2
+end
+
+a1 = zeros(Int32, 2, 2) #a 2x2 array of 0s, able to hold Int32
+
+a2 = Array{Int32}(undef, 5) #an Int32 array with undefined values and 5 slots
+
+a3 = Float64[] #an array of floats with undefined columns
+
+a4 = [1, 2, 3] #automatically creates an array using these values
+
+println(a4[1]) #prints the first element of the array
+println(a4[end]) #prints the last element
+println(5 in a4) #finds the value 5 inside of the array, prints a boolean
+println(findfirst(isequal((2)), a4)) #finds the index of the first 2 inside of a4
+
+f(a) = (a >= 2) ? true : false #a function with a ternary operator
+println(findall(f, a4)) #finds all the elements in a4 which satisfy the function
+println(count(f, a4)) #the number of times that a4 satisfies a conditiona
+=#
